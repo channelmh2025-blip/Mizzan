@@ -67,7 +67,7 @@ async function notifyDue() {
     const late = a.filter(e => e.status === 'overdue').length, body = a.slice(0, 4).map(e => `${e.title}: ${moneyT(e.remaining, e.currency)}`).join('\n');
     const title = late ? `ميزان: ${late} موعد متأخر و${a.length - late} قريب` : `ميزان: ${a.length} موعد مستحق قريباً`;
     const reg = await navigator.serviceWorker?.getRegistration();
-    if (reg) await reg.showNotification(title, { body, icon: 'icons/icon-192.png', badge: 'icons/icon-192.png', dir: 'rtl', lang: 'ar', tag: 'mizan-due' }); else new Notification(title, { body, dir: 'rtl' });
+    if (reg) await reg.showNotification(title, { body, icon: 'icon-192.png', badge: 'icon-192.png', dir: 'rtl', lang: 'ar', tag: 'mizan-due' }); else new Notification(title, { body, dir: 'rtl' });
     localStorage.setItem('mizan-notified', today());
   } catch (e) { console.warn(e); }
 }
@@ -88,7 +88,7 @@ const arErr = e => ERR[e?.message] || (/password/i.test(e?.message || '') ? 'ك�
 function showAuth(mode = 'in', msg = '') {
   started = false; $('#app').hidden = true; const a = $('#auth'); a.hidden = false;
   const T = { in: ['تسجيل الدخول', 'دخول'], up: ['إنشاء حساب جديد', 'إنشاء الحساب'], reset: ['استعادة كلمة المرور', 'إرسال رابط الاستعادة'], newpw: ['كلمة مرور جديدة', 'حفظ كلمة المرور'] }[mode];
-  a.innerHTML = `<div class="auth-box"><img src="icons/icon.svg" alt="" width="72" height="72"><h1>ميزان</h1><p class="tag-line">إدارة مالية شخصية وعائلية</p>
+  a.innerHTML = `<div class="auth-box"><img src="icon.svg" alt="" width="72" height="72"><h1>ميزان</h1><p class="tag-line">إدارة مالية شخصية وعائلية</p>
     <form id="auth-form" class="form" novalidate><h2>${T[0]}</h2>
     ${mode !== 'newpw' ? '<div class="f"><label class="lbl" for="au-e">البريد الإلكتروني</label><input id="au-e" type="email" dir="ltr" autocomplete="email" required></div>' : ''}
     ${mode !== 'reset' ? `<div class="f"><label class="lbl" for="au-p">كلمة المرور</label><input id="au-p" type="password" dir="ltr" autocomplete="${mode === 'in' ? 'current-password' : 'new-password'}" minlength="8" required>${mode !== 'in' ? '<p class="hint">8 أحرف على الأقل.</p>' : ''}</div>` : ''}

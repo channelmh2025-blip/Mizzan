@@ -1,9 +1,9 @@
 // Service Worker: يجعل التطبيق قابلاً للتثبيت ويعمل بلا إنترنت.
 // الشبكة أولاً (لتصل التحديثات فور نشرها) ثم النسخة المخزنة عند انقطاع الاتصال.
 // طلبات قاعدة البيانات (Supabase) وأسعار الصرف لا تُخزَّن هنا أبداً.
-const CACHE = 'mizan-v1';
-const SHELL = ['./', 'index.html', 'css/app.css', 'manifest.webmanifest', 'icons/icon.svg', 'icons/icon-192.png',
-  'js/app.js', 'js/config.js', 'js/store.js', 'js/calc.js', 'js/schema.js', 'js/ui.js', 'js/tx.js', 'js/views1.js', 'js/views2.js', 'js/views3.js'];
+const CACHE = 'mizan-v2';
+const SHELL = ['./', 'index.html', 'app.css', 'manifest.webmanifest', 'icon.svg', 'icon-192.png',
+  'app.js', 'config.js', 'store.js', 'calc.js', 'schema.js', 'ui.js', 'tx.js', 'views1.js', 'views2.js', 'views3.js'];
 const CDN = ['cdn.jsdelivr.net', 'fonts.googleapis.com', 'fonts.gstatic.com'];
 
 self.addEventListener('install', e => e.waitUntil(caches.open(CACHE).then(c => c.addAll(SHELL)).then(() => self.skipWaiting())));

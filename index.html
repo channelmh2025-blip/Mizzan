@@ -7,8 +7,8 @@
 <meta name="description" content="تطبيق عربي لإدارة الدخل والمصروفات والديون والأقساط والجمعيات والادخار">
 <meta name="theme-color" content="#0f4c45">
 <link rel="manifest" href="manifest.webmanifest">
-<link rel="icon" href="icons/icon.svg" type="image/svg+xml">
-<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
@@ -16,13 +16,13 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/app.css">
+<link rel="stylesheet" href="app.css">
 </head>
 <body>
 <div id="auth" hidden></div>
 <div id="app" hidden>
   <aside id="side">
-    <div class="brand"><img src="icons/icon.svg" alt="" width="36" height="36"><b>ميزان</b></div>
+    <div class="brand"><img src="icon.svg" alt="" width="36" height="36"><b>ميزان</b></div>
     <nav>
       <a href="#home" data-nav="home"><i>⌂</i>الرئيسية</a>
       <a href="#income" data-nav="income"><i>↙</i>الدخل</a>
@@ -55,6 +55,6 @@
 <div id="toasts" aria-live="polite"></div>
 <noscript>يحتاج التطبيق إلى تفعيل JavaScript.</noscript>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script type="module" src="js/app.js"></script>
+<script type="module" src="app.js"></script>
 </body>
 </html>
